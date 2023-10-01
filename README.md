@@ -1,61 +1,46 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/_IojtdoU)
 # StackIt Hiring Assignment
 
-### Welcome to StackIt's hiring assignment! 🚀
+#File to Google Sheet
 
-**If you didn't get here through github classroom, are you sure you're supposed to be here? 🤨**
+This Django application allows users to upload a file and create a Google Sheet with the filtered and cleaned data. The sheet is then shared with the user's Gmail account.
 
+#Working:
 
-We are glad to have you here, but before you read what you're going to beat your head over for the next few hours (maybe days?), let's get a few things straight:
-- We really appreciate honesty. Don't copy anyone else's assignment, it'll only sabotage your chances :P
-- You're free to use any stack, and library of your choice. Use whatever you can get your hands on, on the internet!
-- We love out of the box solutions. We prefer to call it *Jugaad* 
-- This might be just the first round, but carries the most importance of all. Give your best, and we hope you have a fun time solving this problem.
+The user uploads a file.
+The application filters out unwanted columns and cleans missing data.
+A Google Sheet is created and the data is written to it using the Gspread API.
+The user's Gmail address is obtained and the sheet URL is shared with them.
+The sheet URL is displayed to the user.
 
-## ✨ **Problem Statement: Crafting a CSV Importer for Google Sheets** ✨
+#Stack:
 
-**Context**:
-Data analysts around the world 🌍, handle massive amounts of data to derive meaningful insights for their organization 📊. Among the tools they use, Google Sheets 📈 stands out due to its ease of use, accessibility, and collaborative features. However, many analysts have identified a recurring pain point: the cumbersome process of importing CSV files into Google Sheets repeatedly.
+Django
+Gspread API
 
-A typical week of an analyst in an e-commerce company 🛒 involves receiving multiple CSV files 📁 containing sales, inventory, customer feedback, and more. The data from these files needs to be meticulously analyzed and presented in the company’s weekly meetings. However, instead of diving directly into analysis, most analysts need to spend an inordinate amount of time just importing and structuring these CSV files into Google Sheets ⏳. This repetitive, time-consuming task reduces the efficiency of these professionals and delays the extraction of crucial insights 😫.
+#Usage:
 
-**Today, you are going to make their lives better.**
+Clone the repository and install the dependencies:
+git clone https://github.com/your-username/file-to-google-sheet.git
+cd file-to-google-sheet
+pip install -r requirements.txt
+Create a .env file in the project root directory and add your Google API credentials:
+GOOGLE_API_KEY=YOUR_API_KEY
+Start the development server:
+python manage.py runserver
+Visit http://localhost:8000 in your web browser.
 
-**Problem Statement**:
-Make a CSV Importer for Google Sheets that lets users drag and drop CSV files onto the Google Sheet. The moment they drop the CSV file, allow them to select which columns to import 🗂️.
+Click the "Upload File" button and select the file you want to upload.
 
-You get brownie points 🍪 if you can make it even easier by allowing them to filter the data as well before importing it into Google Sheets 🔍.
+Click the "Create Sheet" button.
 
-**Other pointers**:
-- Import to Sheet – After validation and mapping, devise a method to populate the data into a chosen Google Sheet, either appending to existing data or creating a new sheet 📥📋.
-- Optimize for Large Files – Large datasets are common in analytics. Your solution should effectively handle large CSV files (~15MB CSV file) without causing performance issues or prolonged waiting times 📈📦.
+Enter your Gmail address and click the "Share Sheet" button.
 
-## Submission ⏰
-The timeline for this submission is: **9AM, 30th Sept, 2023 - 12PM, 2nd Oct, 2023**
+The sheet URL will be displayed.
 
-Some things you might want to take care of:
-- Make use of git and commit your steps!
-- Use good coding practices.
-- Write beautiful and readable code. Well-written code is nothing less than a work of art.
-- Use semantic variable naming.
-- Your code should be organized well in files and folders which is easy to figure out.
-- If there is something happening in your code that is not very intuitive, add some comments.
-- Add to this README at the bottom explaining your approach (brownie points 😋)
+You can then open the sheet in Google Sheets to view the data.
 
-Make sure you finish the assignment a little earlier than this so you have time to make any final changes.
+Limitations:
 
-Once you're done, make sure you **record a video** showing your project working. The video should **NOT** be longer than 120 seconds. While you record the video, tell us about your biggest blocker, and how you overcame it! Don't be shy, talk us through, we'd love that.
-
-We have a checklist at the bottom of this README file, which you should update as your progress with your assignment. It will help us evaluate your project.
-
-- [ ] My code's working just fine! 🥳
-- [ ] I have recorded a video showing it working and embedded it in the README ▶️
-- [ ] I have tested all the normal working cases 😎
-- [ ] I have even solved some edge cases (brownie points) 💪
-- [ ] I added my very planned-out approach to the problem at the end of this README 📜
-
-## Got Questions❓
-Feel free to check the discussions tab, you might get something of help there. Check out that tab before reaching out to us. Also, did you know, the internet is a great place to explore 😛
-
-## Developer's Section
-*Add your video here, and your approach to the problem (optional). Leave some comments for us here if you want, we will be reading this :)*
+Encoding and feature scaling are not implemented due to time constraints.
+The user's Gmail address is obtained using Django's built-in authentication system. This means that users must create an account and log in to use the application.

@@ -1,8 +1,0 @@
-Working:
-1)get file from user
-2)filter out columns and clean missing data. Also because of time contraint i didn't implement Encoding and feature scaling
-3)Create google sheet and write using gspread api
-4)Get gmail from user to share the sheet url
-5)Display sheet url
-Stack used : Django
-
